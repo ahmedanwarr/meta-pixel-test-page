@@ -1,0 +1,330 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Free Strategy Session | TronAI</title>
+    <meta name="description" content="Book your free 30-minute Facebook Ads strategy session with our team." />
+    <meta name="robots" content="noindex" />
+
+    <!-- ── Meta Pixel ─────────────────────────────────────────────────────── -->
+    <script>
+        !function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+        n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;
+        n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;
+        t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,
+        document,'script','https://connect.facebook.net/en_US/fbevents.js');
+
+        fbq('init', 'PIXEL_ID_HERE');
+        fbq('track', 'PageView');
+    </script>
+    <noscript>
+        <img height="1" width="1" style="display:none"
+             src="https://www.facebook.com/tr?id=PIXEL_ID_HERE&ev=PageView&noscript=1" />
+    </noscript>
+    <!-- ── End Meta Pixel ─────────────────────────────────────────────────── -->
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+
+    <style>
+        *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+        :root {
+            --brand:    #6366f1;
+            --brand-d:  #4f46e5;
+            --bg:       #0f0f13;
+            --surface:  #18181f;
+            --border:   #2a2a38;
+            --text:     #f0f0f4;
+            --muted:    #8888a0;
+            --success:  #22c55e;
+            --radius:   12px;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background: var(--bg);
+            color: var(--text);
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            padding: 24px 16px;
+        }
+
+        .card {
+            background: var(--surface);
+            border: 1px solid var(--border);
+            border-radius: var(--radius);
+            padding: 40px 36px;
+            width: 100%;
+            max-width: 480px;
+            box-shadow: 0 24px 64px rgba(0,0,0,.45);
+        }
+
+        .badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            background: rgba(99,102,241,.12);
+            color: var(--brand);
+            border: 1px solid rgba(99,102,241,.25);
+            border-radius: 99px;
+            font-size: 12px;
+            font-weight: 600;
+            padding: 4px 12px;
+            margin-bottom: 20px;
+        }
+
+        h1 {
+            font-size: clamp(22px, 5vw, 28px);
+            font-weight: 800;
+            line-height: 1.25;
+            margin-bottom: 10px;
+        }
+
+        .subtext {
+            color: var(--muted);
+            font-size: 15px;
+            line-height: 1.6;
+            margin-bottom: 28px;
+        }
+
+        .benefits {
+            list-style: none;
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+            margin-bottom: 28px;
+        }
+
+        .benefits li {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            font-size: 14px;
+            color: var(--muted);
+        }
+
+        .benefits li::before {
+            content: '✓';
+            color: var(--success);
+            font-weight: 700;
+            font-size: 13px;
+            flex-shrink: 0;
+        }
+
+        .form { display: flex; flex-direction: column; gap: 14px; }
+
+        .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+
+        label { font-size: 13px; font-weight: 500; color: var(--muted); display: block; margin-bottom: 4px; }
+
+        input, select {
+            width: 100%;
+            background: var(--bg);
+            border: 1px solid var(--border);
+            border-radius: 8px;
+            color: var(--text);
+            font-family: inherit;
+            font-size: 14px;
+            padding: 10px 14px;
+            outline: none;
+            transition: border-color .15s;
+        }
+
+        input:focus, select:focus { border-color: var(--brand); }
+        input::placeholder { color: var(--muted); }
+
+        select option { background: var(--surface); }
+
+        .btn {
+            background: var(--brand);
+            color: #fff;
+            border: none;
+            border-radius: 8px;
+            font-family: inherit;
+            font-size: 15px;
+            font-weight: 700;
+            padding: 13px;
+            cursor: pointer;
+            width: 100%;
+            transition: background .15s, transform .1s, opacity .15s;
+            margin-top: 4px;
+            position: relative;
+        }
+
+        .btn:hover { background: var(--brand-d); }
+        .btn:active { transform: scale(.98); }
+        .btn:disabled { opacity: .6; cursor: not-allowed; }
+
+        .btn-spinner {
+            display: none;
+            width: 18px; height: 18px;
+            border: 2px solid rgba(255,255,255,.3);
+            border-top-color: #fff;
+            border-radius: 50%;
+            animation: spin .6s linear infinite;
+            position: absolute;
+            right: 16px; top: 50%; transform: translateY(-50%);
+        }
+
+        .btn.loading .btn-spinner { display: block; }
+        .btn.loading .btn-label { opacity: 0.7; }
+
+        @keyframes spin { to { transform: translateY(-50%) rotate(360deg); } }
+
+        .error-msg {
+            color: #f87171;
+            font-size: 13px;
+            background: rgba(248,113,113,.08);
+            border: 1px solid rgba(248,113,113,.2);
+            border-radius: 6px;
+            padding: 10px 14px;
+            display: none;
+        }
+
+        footer {
+            margin-top: 20px;
+            font-size: 12px;
+            color: var(--muted);
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <div class="card">
+        <div class="badge">
+            <svg width="10" height="10" viewBox="0 0 10 10" fill="currentColor">
+                <circle cx="5" cy="5" r="5"/>
+            </svg>
+            Free · No commitment
+        </div>
+
+        <h1>Get a Free Facebook Ads Strategy Session</h1>
+        <p class="subtext">Our AI-powered platform has helped brands scale ad spend with confidence. Book 30 minutes with our team.</p>
+
+        <ul class="benefits">
+            <li>Full audit of your current campaigns</li>
+            <li>Custom scaling strategy for your funnel</li>
+            <li>Live walkthrough of AI recommendations</li>
+        </ul>
+
+        <div class="error-msg" id="error-msg"></div>
+
+        <form class="form" id="lead-form" novalidate>
+            <div class="form-row">
+                <div>
+                    <label for="first_name">First name</label>
+                    <input type="text" id="first_name" name="first_name" placeholder="Jane" required />
+                </div>
+                <div>
+                    <label for="last_name">Last name</label>
+                    <input type="text" id="last_name" name="last_name" placeholder="Smith" required />
+                </div>
+            </div>
+
+            <div>
+                <label for="email">Work email</label>
+                <input type="email" id="email" name="email" placeholder="jane@company.com" required />
+            </div>
+
+            <div>
+                <label for="company">Company</label>
+                <input type="text" id="company" name="company" placeholder="Acme Corp" />
+            </div>
+
+            <div>
+                <label for="monthly_spend">Monthly ad spend</label>
+                <select id="monthly_spend" name="monthly_spend">
+                    <option value="" disabled selected>Select range…</option>
+                    <option value="under_5k">Under $5,000</option>
+                    <option value="5k_20k">$5,000 – $20,000</option>
+                    <option value="20k_50k">$20,000 – $50,000</option>
+                    <option value="50k_plus">$50,000+</option>
+                </select>
+            </div>
+
+            <button type="submit" class="btn" id="submit-btn">
+                <span class="btn-label">Book My Free Session →</span>
+                <span class="btn-spinner"></span>
+            </button>
+        </form>
+    </div>
+
+    <footer>By submitting, you agree to our <a href="#" style="color:var(--brand)">Privacy Policy</a>.</footer>
+
+    <script>
+        // ── Config — reads from environment injected by the server at build time
+        // or override here for local testing
+        const API_BASE = 'API_BASE_URL_HERE'; // e.g. https://yourapi.fly.dev
+
+        function generateEventId() {
+            return 'evt_' + Date.now() + '_' + Math.random().toString(36).substr(2, 9);
+        }
+
+        document.getElementById('lead-form').addEventListener('submit', async function(e) {
+            e.preventDefault();
+
+            const btn = document.getElementById('submit-btn');
+            const errorMsg = document.getElementById('error-msg');
+            errorMsg.style.display = 'none';
+
+            // Basic validation
+            const email = document.getElementById('email').value.trim();
+            const firstName = document.getElementById('first_name').value.trim();
+            const lastName = document.getElementById('last_name').value.trim();
+            if (!email || !firstName || !lastName) {
+                errorMsg.textContent = 'Please fill in all required fields.';
+                errorMsg.style.display = 'block';
+                return;
+            }
+
+            btn.classList.add('loading');
+            btn.disabled = true;
+
+            const eventId = generateEventId();
+
+            // 1. Fire pixel (client-side) with the same event_id for deduplication
+            if (window.fbq) {
+                fbq('track', 'Lead', {
+                    content_name: 'strategy_session',
+                    value: 0,
+                    currency: 'USD'
+                }, {
+                    eventID: eventId
+                });
+            }
+
+            try {
+                // 2. Send to CAPI relay (server-side)
+                const payload = {
+                    event_id: eventId,
+                    first_name: firstName,
+                    last_name: lastName,
+                    email: email,
+                    company: document.getElementById('company').value.trim(),
+                    monthly_spend: document.getElementById('monthly_spend').value,
+                    source_url: window.location.href,
+                    user_agent: navigator.userAgent,
+                };
+
+                await fetch(`${API_BASE}/capi/lead`, {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify(payload),
+                });
+            } catch (err) {
+                // CAPI failure is non-blocking — pixel already fired
+                console.warn('CAPI relay failed:', err);
+            }
+
+            // Redirect to thank-you page
+            window.location.href = './thank-you.html';
+        });
+    </script>
+</body>
+</html>
