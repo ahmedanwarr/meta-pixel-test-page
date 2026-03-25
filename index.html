@@ -15,12 +15,12 @@
         t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,
         document,'script','https://connect.facebook.net/en_US/fbevents.js');
 
-        fbq('init', 'PIXEL_ID_HERE');
+        fbq('init', '867664849365652');
         fbq('track', 'PageView');
     </script>
     <noscript>
         <img height="1" width="1" style="display:none"
-             src="https://www.facebook.com/tr?id=PIXEL_ID_HERE&ev=PageView&noscript=1" />
+             src="https://www.facebook.com/tr?id=867664849365652&ev=PageView&noscript=1" />
     </noscript>
     <!-- ── End Meta Pixel ─────────────────────────────────────────────────── -->
 
@@ -258,10 +258,6 @@
     <footer>By submitting, you agree to our <a href="#" style="color:var(--brand)">Privacy Policy</a>.</footer>
 
     <script>
-        // ── Config — reads from environment injected by the server at build time
-        // or override here for local testing
-        const API_BASE = 'API_BASE_URL_HERE'; // e.g. https://yourapi.fly.dev
-
         function generateEventId() {
             return 'evt_' + Date.now() + '_' + Math.random().toString(36).substr(2, 9);
         }
@@ -297,29 +293,6 @@
                 }, {
                     eventID: eventId
                 });
-            }
-
-            try {
-                // 2. Send to CAPI relay (server-side)
-                const payload = {
-                    event_id: eventId,
-                    first_name: firstName,
-                    last_name: lastName,
-                    email: email,
-                    company: document.getElementById('company').value.trim(),
-                    monthly_spend: document.getElementById('monthly_spend').value,
-                    source_url: window.location.href,
-                    user_agent: navigator.userAgent,
-                };
-
-                await fetch(`${API_BASE}/capi/lead`, {
-                    method: 'POST',
-                    headers: { 'Content-Type': 'application/json' },
-                    body: JSON.stringify(payload),
-                });
-            } catch (err) {
-                // CAPI failure is non-blocking — pixel already fired
-                console.warn('CAPI relay failed:', err);
             }
 
             // Redirect to thank-you page
