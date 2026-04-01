@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Free Strategy Session | TronAI</title>
-    <meta name="description" content="Book your free 30-minute Facebook Ads strategy session with our team." />
+    <title>Register for Camp Impact | Christian Events & Marriage Retreats</title>
+    <meta name="description" content="Join Camp Impact — a faith-filled gathering of Christians for worship, marriage retreats, and life-changing community events." />
     <meta name="robots" content="noindex" />
 
     <!-- ── Meta Pixel ─────────────────────────────────────────────────────── -->
@@ -26,33 +26,67 @@
 
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Playfair+Display:wght@700;800&display=swap" rel="stylesheet" />
 
     <style>
         *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
         :root {
-            --brand:    #6366f1;
-            --brand-d:  #4f46e5;
-            --bg:       #0f0f13;
-            --surface:  #18181f;
-            --border:   #2a2a38;
-            --text:     #f0f0f4;
-            --muted:    #8888a0;
+            --brand:    #b45309;
+            --brand-d:  #92400e;
+            --brand-l:  #fbbf24;
+            --bg:       #1a1208;
+            --surface:  #211a0d;
+            --border:   #3d2f14;
+            --text:     #fdf6e3;
+            --muted:    #a8916a;
             --success:  #22c55e;
-            --radius:   12px;
+            --gold:     #f59e0b;
+            --radius:   14px;
         }
 
         body {
             font-family: 'Inter', sans-serif;
             background: var(--bg);
+            background-image:
+                radial-gradient(ellipse at 20% 50%, rgba(180, 83, 9, 0.08) 0%, transparent 60%),
+                radial-gradient(ellipse at 80% 20%, rgba(245, 158, 11, 0.06) 0%, transparent 50%);
             color: var(--text);
             min-height: 100vh;
             display: flex;
             flex-direction: column;
             align-items: center;
             justify-content: center;
-            padding: 24px 16px;
+            padding: 32px 16px;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            margin-bottom: 28px;
+        }
+
+        .logo-icon {
+            width: 40px;
+            height: 40px;
+            background: linear-gradient(135deg, var(--brand), var(--gold));
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .logo-text {
+            font-family: 'Playfair Display', serif;
+            font-size: 22px;
+            font-weight: 700;
+            color: var(--text);
+            letter-spacing: 0.01em;
+        }
+
+        .logo-text span {
+            color: var(--gold);
         }
 
         .card {
@@ -61,36 +95,63 @@
             border-radius: var(--radius);
             padding: 40px 36px;
             width: 100%;
-            max-width: 480px;
-            box-shadow: 0 24px 64px rgba(0,0,0,.45);
+            max-width: 500px;
+            box-shadow: 0 24px 64px rgba(0,0,0,.55), 0 0 0 1px rgba(245,158,11,.05);
         }
 
         .badge {
             display: inline-flex;
             align-items: center;
             gap: 6px;
-            background: rgba(99,102,241,.12);
-            color: var(--brand);
-            border: 1px solid rgba(99,102,241,.25);
+            background: rgba(245, 158, 11, .1);
+            color: var(--gold);
+            border: 1px solid rgba(245, 158, 11, .25);
             border-radius: 99px;
             font-size: 12px;
             font-weight: 600;
             padding: 4px 12px;
-            margin-bottom: 20px;
+            margin-bottom: 18px;
+        }
+
+        .cross-icon {
+            font-size: 11px;
         }
 
         h1 {
-            font-size: clamp(22px, 5vw, 28px);
+            font-family: 'Playfair Display', serif;
+            font-size: clamp(22px, 5vw, 30px);
             font-weight: 800;
             line-height: 1.25;
             margin-bottom: 10px;
+            color: var(--text);
         }
 
         .subtext {
             color: var(--muted);
             font-size: 15px;
+            line-height: 1.65;
+            margin-bottom: 24px;
+        }
+
+        .verse {
+            background: rgba(245, 158, 11, .07);
+            border-left: 3px solid var(--gold);
+            border-radius: 0 8px 8px 0;
+            padding: 12px 16px;
+            margin-bottom: 24px;
+            font-style: italic;
+            font-size: 13px;
+            color: var(--muted);
             line-height: 1.6;
-            margin-bottom: 28px;
+        }
+
+        .verse cite {
+            display: block;
+            margin-top: 6px;
+            font-style: normal;
+            font-weight: 600;
+            color: var(--gold);
+            font-size: 12px;
         }
 
         .benefits {
@@ -98,7 +159,7 @@
             display: flex;
             flex-direction: column;
             gap: 8px;
-            margin-bottom: 28px;
+            margin-bottom: 26px;
         }
 
         .benefits li {
@@ -110,11 +171,17 @@
         }
 
         .benefits li::before {
-            content: '✓';
-            color: var(--success);
+            content: '✦';
+            color: var(--gold);
             font-weight: 700;
-            font-size: 13px;
+            font-size: 11px;
             flex-shrink: 0;
+        }
+
+        .divider {
+            border: none;
+            border-top: 1px solid var(--border);
+            margin-bottom: 24px;
         }
 
         .form { display: flex; flex-direction: column; gap: 14px; }
@@ -136,28 +203,29 @@
             transition: border-color .15s;
         }
 
-        input:focus, select:focus { border-color: var(--brand); }
-        input::placeholder { color: var(--muted); }
+        input:focus, select:focus { border-color: var(--gold); }
+        input::placeholder { color: var(--muted); opacity: .6; }
 
         select option { background: var(--surface); }
 
         .btn {
-            background: var(--brand);
+            background: linear-gradient(135deg, var(--brand), var(--gold));
             color: #fff;
             border: none;
             border-radius: 8px;
             font-family: inherit;
             font-size: 15px;
             font-weight: 700;
-            padding: 13px;
+            padding: 14px;
             cursor: pointer;
             width: 100%;
-            transition: background .15s, transform .1s, opacity .15s;
+            transition: opacity .15s, transform .1s;
             margin-top: 4px;
             position: relative;
+            letter-spacing: 0.01em;
         }
 
-        .btn:hover { background: var(--brand-d); }
+        .btn:hover { opacity: .92; }
         .btn:active { transform: scale(.98); }
         .btn:disabled { opacity: .6; cursor: not-allowed; }
 
@@ -193,25 +261,50 @@
             color: var(--muted);
             text-align: center;
         }
+
+        footer a { color: var(--gold); text-decoration: none; }
+        footer a:hover { text-decoration: underline; }
+
+        @media (max-width: 480px) {
+            .card { padding: 28px 20px; }
+            .form-row { grid-template-columns: 1fr; }
+        }
     </style>
 </head>
 <body>
+    <div class="logo">
+        <div class="logo-icon">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2.5" stroke-linecap="round">
+                <line x1="12" y1="2" x2="12" y2="22"/>
+                <line x1="5" y1="9" x2="19" y2="9"/>
+            </svg>
+        </div>
+        <div class="logo-text">Camp <span>Impact</span></div>
+    </div>
+
     <div class="card">
         <div class="badge">
-            <svg width="10" height="10" viewBox="0 0 10 10" fill="currentColor">
-                <circle cx="5" cy="5" r="5"/>
-            </svg>
-            Free · No commitment
+            <span class="cross-icon">✝</span>
+            Faith · Community · Transformation
         </div>
 
-        <h1>Get a Free Facebook Ads Strategy Session</h1>
-        <p class="subtext">Our AI-powered platform has helped brands scale ad spend with confidence. Book 30 minutes with our team.</p>
+        <h1>Register for Camp Impact 2025</h1>
+        <p class="subtext">Join hundreds of believers for a powerful weekend of worship, marriage enrichment, spiritual growth, and Christ-centered community.</p>
+
+        <div class="verse">
+            "As iron sharpens iron, so one person sharpens another."
+            <cite>— Proverbs 27:17</cite>
+        </div>
 
         <ul class="benefits">
-            <li>Full audit of your current campaigns</li>
-            <li>Custom scaling strategy for your funnel</li>
-            <li>Live walkthrough of AI recommendations</li>
+            <li>Marriage retreat sessions with Spirit-led counselors</li>
+            <li>Worship nights, prayer gatherings & Bible teaching</li>
+            <li>Youth programs and family activities</li>
+            <li>Community meals and fellowship</li>
+            <li>One-on-one pastoral care available</li>
         </ul>
+
+        <hr class="divider" />
 
         <div class="error-msg" id="error-msg"></div>
 
@@ -219,7 +312,7 @@
             <div class="form-row">
                 <div>
                     <label for="first_name">First name</label>
-                    <input type="text" id="first_name" name="first_name" placeholder="Jane" required />
+                    <input type="text" id="first_name" name="first_name" placeholder="John" required />
                 </div>
                 <div>
                     <label for="last_name">Last name</label>
@@ -228,34 +321,45 @@
             </div>
 
             <div>
-                <label for="email">Work email</label>
-                <input type="email" id="email" name="email" placeholder="jane@company.com" required />
+                <label for="email">Email address</label>
+                <input type="email" id="email" name="email" placeholder="john@example.com" required />
             </div>
 
             <div>
-                <label for="company">Company</label>
-                <input type="text" id="company" name="company" placeholder="Acme Corp" />
+                <label for="phone">Phone number</label>
+                <input type="tel" id="phone" name="phone" placeholder="+1 (555) 000-0000" />
             </div>
 
             <div>
-                <label for="monthly_spend">Monthly ad spend</label>
-                <select id="monthly_spend" name="monthly_spend">
-                    <option value="" disabled selected>Select range…</option>
-                    <option value="under_5k">Under $5,000</option>
-                    <option value="5k_20k">$5,000 – $20,000</option>
-                    <option value="20k_50k">$20,000 – $50,000</option>
-                    <option value="50k_plus">$50,000+</option>
+                <label for="event_type">I'm interested in</label>
+                <select id="event_type" name="event_type">
+                    <option value="" disabled selected>Select an event…</option>
+                    <option value="marriage_retreat">Marriage Retreat</option>
+                    <option value="worship_camp">Worship & Prayer Camp</option>
+                    <option value="youth_camp">Youth Camp</option>
+                    <option value="family_weekend">Family Weekend</option>
+                    <option value="mens_retreat">Men's Retreat</option>
+                    <option value="womens_retreat">Women's Retreat</option>
+                    <option value="full_camp">Full Camp Experience</option>
                 </select>
             </div>
 
+            <div>
+                <label for="church">Church or ministry (optional)</label>
+                <input type="text" id="church" name="church" placeholder="Grace Community Church" />
+            </div>
+
             <button type="submit" class="btn" id="submit-btn">
-                <span class="btn-label">Book My Free Session →</span>
+                <span class="btn-label">Reserve My Spot →</span>
                 <span class="btn-spinner"></span>
             </button>
         </form>
     </div>
 
-    <footer>By submitting, you agree to our <a href="#" style="color:var(--brand)">Privacy Policy</a>.</footer>
+    <footer>
+        By registering, you agree to our <a href="#">Privacy Policy</a> &amp; <a href="#">Terms of Service</a>.<br />
+        Camp Impact is a Christ-centered ministry. All are welcome.
+    </footer>
 
     <script>
         function generateEventId() {
@@ -269,7 +373,6 @@
             const errorMsg = document.getElementById('error-msg');
             errorMsg.style.display = 'none';
 
-            // Basic validation
             const email = document.getElementById('email').value.trim();
             const firstName = document.getElementById('first_name').value.trim();
             const lastName = document.getElementById('last_name').value.trim();
@@ -284,10 +387,9 @@
 
             const eventId = generateEventId();
 
-            // 1. Fire pixel (client-side) with the same event_id for deduplication
             if (window.fbq) {
                 fbq('track', 'Lead', {
-                    content_name: 'strategy_session',
+                    content_name: 'camp_impact_registration',
                     value: 0,
                     currency: 'USD'
                 }, {
@@ -295,7 +397,6 @@
                 });
             }
 
-            // Redirect to thank-you page
             window.location.href = './thank-you.html';
         });
     </script>
